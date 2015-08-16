@@ -16,6 +16,7 @@ class SortingMethods
         steps += 1
       end
 
+      steps += 1
       array[sorted_index + 1] = compare_value
 
       sorted_index = compare_index
@@ -29,8 +30,39 @@ class SortingMethods
   end
 
 
-  def method_name
-    
+  def bubble_sort(array)
+
+    steps = 0
+
+    loop do
+
+      swaps = 0
+      a_index = 0
+      b_index = 1
+
+      while b_index < array.length 
+
+        if array[a_index] > array[b_index]
+          temp = array[a_index]
+          array[a_index] = array[b_index]
+          array[b_index] = temp
+          swaps += 1
+          steps += 1
+        end
+
+        a_index += 1
+        b_index += 1
+        steps += 1
+
+      end
+
+      break if swaps == 0
+
+    end
+
+    puts "Steps: #{steps}"
+    print array
+
   end
 
   
